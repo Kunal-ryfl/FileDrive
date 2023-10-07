@@ -7,6 +7,13 @@ import FolderComponent from "@/components/folder-component";
 import Refresh from "@/components/refresh";
 import { Bird, FileStack } from "lucide-react";
 
+import type { Metadata } from 'next'
+ 
+export const metadata: Metadata = {
+  title: 'root',
+  // description: '...',
+}
+
 const Page = async ({ params }: { params: { folderId: string } }) => {
   const user = await currentProfile();
   let allFolders = await db.folder.findMany({

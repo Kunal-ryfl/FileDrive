@@ -11,8 +11,45 @@ import Image from "next/image";
 import Refresh from "@/components/refresh";
 import FolderComponent from "@/components/folder-component";
 import FileComponent from "@/components/file_component";
+import type { Metadata, ResolvingMetadata } from 'next'
+import { notFound } from "next/navigation";
+
+
+
+// export const dynamicParams = false
+
+export async function generateStaticParams() {
+  const folder = await db.folder.findMany();
+ 
+  return folder.map((folder) => ({
+    folderId: folder.id,
+  }))
+}
+
+export async function generateMetadata({ params }: { params: { folderId: string } }){
+  
+  const folder = await db.folder.findUnique({where:{id:params.folderId}})  
+
+  return {
+    title:folder?.name,
+    
+  }
+}
+
+
+
 const Page = async ({ params }: { params: { folderId: string } }) => {
   const user = await currentProfile();
+ 
+  const checkFolderValid = await db.folder.findUnique({
+    where:{id:params.folderId}
+  })
+
+  if(checkFolderValid===null){
+    return notFound()
+  }
+  // console.log(checkFolderValid)
+
   const allFolders = await db.folder.findMany({
     where: {
       profileId: user?.id,
@@ -26,6 +63,10 @@ const Page = async ({ params }: { params: { folderId: string } }) => {
     },
     
   });
+ 
+
+  // console.log(params.folderId)
+
   return (
     <div>
       <div className="      py-[2rem] container">
