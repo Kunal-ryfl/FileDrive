@@ -32,7 +32,7 @@ const NewFileModal = ({folderId}:{folderId:string}) => {
           <FileUpload folderId={folderId}  />
           <DialogTitle> </DialogTitle>
           <DialogDescription>
-           
+           Maximum upload size is <span className="  font-bold">4mb</span> for both img and pdf
           </DialogDescription>
         </DialogHeader>
       </DialogContent>

@@ -49,7 +49,7 @@ const FolderRenameModal = ({ folderId,oldName }: { folderId: string,oldName:stri
 
   return (
     <Dialog>
-      <DialogTrigger className="  hover:bg-neutral-100 hover:text-black  text-neutral-600   w-full relative flex cursor-point  items-center rounded-sm px-2 gap-2 py-1.5 text-sm outline-none transition-colors focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50">
+      <DialogTrigger className="  hover:bg-neutral-100 hover:text-black dark:hover:bg-stone-800 dark:hover:text-white    bg-n  text-neutral-500   w-full relative flex cursor-point  items-center rounded-sm px-2 gap-2 py-1.5 text-sm outline-none transition-colors focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50">
         <FolderEdit className=" scale-75" />
         Rename
       </DialogTrigger>

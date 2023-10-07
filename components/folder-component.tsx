@@ -7,7 +7,7 @@ import { FolderIcon } from "lucide-react";
 const FolderComponent = ({ folder }: { folder: Folder }) => {
   const router = useRouter();
   return (
-    <div className="  hover:brightness-90 flex w-full dark:bg-neutral-600 bg-rose-50 rounded-xl  ">
+    <div className=" hover:brightness-[0.75] duration-500 flex w-full dark:bg-neutral-600 bg-rose-50 rounded-xl  ">
       <div
         className="   w-4/5 p-3  gap-3 items-center flex"
         onDoubleClick={() => router.push(`/root/${folder.id}`)}

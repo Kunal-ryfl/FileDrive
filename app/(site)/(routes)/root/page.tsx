@@ -24,8 +24,7 @@ const Page = async ({ params }: { params: { folderId: string } }) => {
 
   allFolders = allFolders.filter((x) => x.parentId === null);
   return (
-    <div className=" ">
-      <div className="   py-[2rem] container">
+      <div className="   container  py-[2rem] ">
         <div className="  w-full justify-between  items-center my-3 flex">
           <h1 className=" select-none font-medium text-xl">Folders </h1>
           <div className=" flex gap-3 items-center">
@@ -46,7 +45,6 @@ const Page = async ({ params }: { params: { folderId: string } }) => {
           )}
         </div>
       </div>
-    </div>
   );
 };
 

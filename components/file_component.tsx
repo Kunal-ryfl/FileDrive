@@ -25,7 +25,7 @@ const FileComponent = ({ file }: { file: File }) => {
     return null;
   }
   return (
-    <div className=" relative">
+    <div className=" hover:brightness-[0.75] duration-500 relative">
       <Dialog>
         <DialogTrigger asChild>
           <div className="p-2  rounded-xl dark:bg-neutral-600 bg-rose-50">
