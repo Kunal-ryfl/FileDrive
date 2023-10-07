@@ -87,7 +87,7 @@ const FileComponent = ({ file }: { file: File }) => {
         </DialogContent>
       </Dialog>
       <div className=" absolute top-2  right-2 ">
-        <Options date={file.createdAt} type="FILE" id={file.id} />
+        <Options folderName="" date={file.createdAt} type="FILE" id={file.id} />
       </div>
     </div>
   );

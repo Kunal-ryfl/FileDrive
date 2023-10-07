@@ -8,18 +8,21 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import axios from "axios";
-import { Clock4, MoreVertical, Trash2 } from "lucide-react";
+import { Clock4, FolderEdit, MoreVertical, Trash2 } from "lucide-react";
 import toast from "react-hot-toast";
 import moment from "moment";
+import FolderRenameModal from "./modals/folder_rename_modal";
 
 const Options = ({
   id,
   type,
   date,
+  folderName,
 }: {
   id: string;
   type: string;
   date: Date;
+  folderName: string;
 }) => {
   async function onDelete() {
     const loadingToast = toast.loading("deleting...");
@@ -44,6 +47,12 @@ const Options = ({
       <DropdownMenuContent>
         <DropdownMenuLabel>Actions</DropdownMenuLabel>
         <DropdownMenuSeparator />
+
+        {type == "FOLDER" && (
+          <DropdownMenuItem asChild>
+            <FolderRenameModal oldName={folderName} folderId={id} />
+          </DropdownMenuItem>
+        )}
         <DropdownMenuItem
           className=" cursor-pointer text-red-600 gap-2"
           onClick={onDelete}
