@@ -31,14 +31,14 @@ const NewFolderModal = ({ parentId }: { parentId: string }) => {
 
   const onSubmit = async () => {
     setLoading(true);
-    const loadingToast  = toast.loading("creating folder...") 
+    // const loadingToast  = toast.loading("creating folder...") 
     try {
       await axios.post("/api/newFolder", { name: folderName, parentId });
       router.refresh();
-      toast.success("folder created",{id:loadingToast,position:'bottom-right'});
+      toast.success("folder created",{position:'bottom-right'});
 
     } catch (error) {
-      toast.error("error",{id:loadingToast,position:'bottom-right'});
+      toast.error("error",{position:'bottom-right'});
       console.log(error);
     }
     setFolderName("")
