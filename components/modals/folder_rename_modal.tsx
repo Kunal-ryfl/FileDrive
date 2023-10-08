@@ -23,16 +23,14 @@ const FolderRenameModal = ({ folderId,oldName }: { folderId: string,oldName:stri
 
   const onRename = async () => {
     setLoading(true);
-    const loadingToast = toast.loading("renaming folder...");
     try {
       await axios.post("/api/rename", { folderId, newName: folderName });
       router.refresh();
       toast.success("folder renamed", {
-        id: loadingToast,
-        position: "bottom-right",
+               position: "bottom-right",
       });
     } catch (error) {
-      toast.error("error", { id: loadingToast, position: "bottom-right" });
+      toast.error("error", { position: "bottom-right" });
       console.log(error);
     }
     setFolderName("");
@@ -70,7 +68,7 @@ const FolderRenameModal = ({ folderId,oldName }: { folderId: string,oldName:stri
             >
               {loading ? (
                 <div className=" flex  items-center gap-2">
-                  <Loader2 className=" animate-spin" /> <p>renaming</p>
+                  <Loader2 className=" animate-spin" /> <p>updating</p>
                 </div>
               ) : (
                 <p>rename</p>

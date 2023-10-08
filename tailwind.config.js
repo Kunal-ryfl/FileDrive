@@ -8,6 +8,7 @@ module.exports = {
     './src/**/*.{ts,tsx}',
 	],
   theme: {
+
     container: {
       center: true,
       padding: "2rem",
@@ -71,7 +72,9 @@ module.exports = {
         "accordion-up": "accordion-up 0.2s ease-out",
       },
     },
-    
+
   },
-  plugins: [require("tailwindcss-animate",)],
+  plugins: [require("tailwindcss-animate")],
+  
+  
 }

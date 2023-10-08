@@ -85,11 +85,11 @@ async function onChange(e:React.FormEvent<HTMLInputElement>) {
   }
 
   return (
-    <Dialog>
+    <Dialog  >
       <DialogTrigger className=" cursor-pointer">
         <Search />
       </DialogTrigger>
-      <DialogContent>
+      <DialogContent   >
         <DialogHeader>
           <DialogTitle>
             <p className=" my-3">Search Folder</p>

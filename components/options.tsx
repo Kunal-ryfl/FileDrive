@@ -1,3 +1,4 @@
+"use client"
 import React from "react";
 import {
   DropdownMenu,
@@ -12,7 +13,7 @@ import { Clock4, FolderEdit, MoreVertical, Trash2 } from "lucide-react";
 import toast from "react-hot-toast";
 import moment from "moment";
 import FolderRenameModal from "./modals/folder_rename_modal";
-
+import { useRouter } from "next/navigation";
 const Options = ({
   id,
   type,
@@ -24,6 +25,8 @@ const Options = ({
   date: Date;
   folderName: string;
 }) => {
+  const router = useRouter()
+  
   async function onDelete() {
     const loadingToast = toast.loading("deleting...");
     try {
@@ -33,6 +36,8 @@ const Options = ({
         id: loadingToast,
         position: "bottom-right",
       });
+      router.refresh()
+
     } catch (error) {
       toast.error("error", { id: loadingToast, position: "bottom-right" });
 

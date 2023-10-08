@@ -16,8 +16,8 @@ const Navigation = () => {
           </div>
         </Link>
         <div className=" items-center flex gap-5">
-          <ModeToggle />
            <SearchModal/>
+          <ModeToggle />
           <UserButton afterSignOutUrl="/" />
         </div>
       </div>

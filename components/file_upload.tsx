@@ -1,7 +1,6 @@
 import axios from "axios";
 import { UploadDropzone } from "@/lib/uploadthing";
 import toast from "react-hot-toast";
-
 import "@uploadthing/react/styles.css";
 
 interface FileUploadProps {
@@ -31,6 +30,7 @@ const FileUpload = ({ folderId }: { folderId: string }) => {
               id: loadingToast,
               position: "bottom-right",
             });
+
           } catch (error) {
             toast.error("error", {
               id: loadingToast,
