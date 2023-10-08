@@ -4,6 +4,7 @@ import { FileStack } from "lucide-react";
 import Link from "next/link";
 import { ModeToggle } from "./modetoggle";
 import { Separator } from "./ui/separator";
+import SearchModal from "./modals/search_modal";
 const Navigation = () => {
   return (
     <>
@@ -16,6 +17,7 @@ const Navigation = () => {
         </Link>
         <div className=" items-center flex gap-5">
           <ModeToggle />
+           <SearchModal/>
           <UserButton afterSignOutUrl="/" />
         </div>
       </div>
