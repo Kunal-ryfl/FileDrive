@@ -23,10 +23,16 @@ const SearchModal = () => {
   const [res, setRes] = useState<Folder[]>([]);
   const [loading, setLoading] = useState(false);
   const [query, setQuery] = useState({text: ''});
+  const [isMounted, setIsMounted] = useState(false);
+
 
   function onClick(x: Folder) {
     router.push(`/root/${x.id}`);
   }
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   useEffect(() => {
     //here you will have correct value in userInput
@@ -73,6 +79,11 @@ async function onChange(e:React.FormEvent<HTMLInputElement>) {
     }
     setLoading(false);
   }
+
+  if (!isMounted) {
+    return <Search/>;
+  }
+
   return (
     <Dialog>
       <DialogTrigger className=" cursor-pointer">
