@@ -21,6 +21,7 @@ export async function GET(req: Request) {
 
     const folders = await db.folder.findMany({
       where: {
+        profileId:profile.userId,
         name: {
           contains: query || "",
         },
