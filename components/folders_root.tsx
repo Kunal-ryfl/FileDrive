@@ -60,7 +60,7 @@ const Foldersroot = ({userId }: { userId: string }) => {
         ))}
 
       {variables.map((pending) => (
-        <div className=" pointer-events-none opacity-50  duration-500  flex w-full dark:bg-neutral-600 bg-rose-50 rounded-xl  ">
+        <div  key={pending.id} className=" pointer-events-none opacity-50  duration-500  flex w-full dark:bg-neutral-600 bg-rose-50 rounded-xl  ">
           <div className="   w-4/5 p-3  gap-3 items-center flex">
             <div>
               <FolderIcon className="  dark:fill-neutral-900  fill-neutral-500" />
