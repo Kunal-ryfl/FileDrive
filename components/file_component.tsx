@@ -17,6 +17,7 @@ const FileComponent = ({ file }: { file: File }) => {
   const [isMounted, setIsMounted] = useState(false);
   const [open, setOpen] = useState(false);
 
+
   useEffect(() => {
     setIsMounted(true);
   }, []);
@@ -81,7 +82,13 @@ const FileComponent = ({ file }: { file: File }) => {
             )}
 
             {file.name.indexOf("pdf") !== -1 && (
-              <iframe src={`${file.link}`} className=" w-full h-full" />
+              // <iframe src={`${file.link}`} className=" w-full h-full" />
+<iframe
+      src={`https://docs.google.com/viewer?url=${file.link}&embedded=true`}
+      width="100%"
+    className=" w-full h-full"
+      title="Document Viewer"
+    ></iframe>
             )}
           </div>
         </DialogContent>
